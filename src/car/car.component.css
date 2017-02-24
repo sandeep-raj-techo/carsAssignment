@@ -1,0 +1,36 @@
+.container .carMakes, .container .carModels {
+  width: calc(50% - 5px);
+  float: left; }
+  .container .carMakes label, .container .carModels label {
+    padding: 10px;
+    margin: -10px;
+    width: 100%;
+    display: block; }
+  .container .carMakes select, .container .carModels select {
+    -webkit-appearance: none;
+    padding: 10px;
+    width: 100%; }
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 10px; }
+  .container .carMakes {
+    margin-right: 5px; }
+  .container .carModels {
+    margin-left: 5px; }
+  .container .details .heading {
+    font-size: 1.1em;
+    text-transform: uppercase; }
+  .container .details img {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
+    background: #fff; }
+  .container .details .description {
+    margin: 10px 0;
+    text-align: justify; }
+
+/*# sourceMappingURL=car.component.css.map */

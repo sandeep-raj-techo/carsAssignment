@@ -1,0 +1,57 @@
+// Variables for various values
+$spacing: 10px;
+$headingFontSize: 1.1em;
+// mixin for border radius
+@mixin border-radius ($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// Pseudo CSS which willnot be compiled but used to extend 
+%basicDropDown {
+    width: calc(50% - #{$spacing/2});
+    float: left;
+    label {
+        padding: $spacing;
+        margin: 0 -$spacing;
+        width: 100%;
+        display: block;
+    }
+    select {
+        -webkit-appearance: none;
+        padding: $spacing;
+        width: 100%;
+    }
+}
+
+// CSS that will be compiled
+.container {
+    max-width: 800px;
+    margin: 3*$spacing auto;
+    padding: $spacing;
+    .carMakes {
+        @extend %basicDropDown;
+        margin-right: $spacing/2;
+    }
+    .carModels {
+        @extend %basicDropDown;
+        margin-left: $spacing/2;
+    }
+    .details {
+        .heading {
+            font-size: $headingFontSize;
+            text-transform: uppercase;
+        }
+        img {
+            @include border-radius($spacing/2);
+            width: 100%;
+            margin: $spacing 0;
+            background: #fff;
+        }
+        .description {
+            margin: $spacing 0;
+            text-align: justify;
+        }
+    }
+}

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { CarComponent } from './car.component';
+import { CarService } from './car.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { CarComponent } from './car.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CarService],
   bootstrap: [CarComponent]
 })
 export class CarModule { }

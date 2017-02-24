@@ -1,3 +1,23 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+    <div class="carMakes">
+        <label for="carMakes">Make:</label>
+        <select name="CarMakes" id="carMakes" *ngIf="makes" (change)="selectedMake($event.target.value)">
+            <option value="" disabled>Choose a Make</option>
+            <option *ngFor="let make of makes" [value]="make._id">{{make.make}}</option>
+        </select>
+    </div>
+    <div class="carModels" *ngIf="car">
+        <label for="carModels">Model:</label>
+        <select name="carModels" id="carModels" (ngModelChange)="selectecModel($event)" [ngModel]="model">
+            <option value="" disabled>Choose a Model</option>
+            <option *ngFor="let model of car.models" [value]="model | json">{{model.name}}</option>
+        </select>
+    </div>
+    <div class="details" *ngIf="parsedModel">
+        <img [src]="parsedModel.image" alt="parsedModel.name" class="img-rounded" id="carImage">
+        <div class="heading">Detials of {{car.make}} {{parsedModel.name}}:</div>
+        <div class="col-xs-12">
+            <p class="description">{{parsedModel.description}}</p>
+        </div>
+    </div>
+</div>
