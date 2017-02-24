@@ -5,6 +5,8 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 ## Development server
   First time Setup  ( start MongoDB)
 
+  `npm install`
+
   `cd server`
 
   `node resetDataBase.js`
